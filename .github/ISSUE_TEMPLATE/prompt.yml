@@ -1,0 +1,128 @@
+name: Submit a Wan 3.0 prompt
+description: Share one Wan 3.0 directing brief with its tested or untested status and input roles.
+title: "[Prompt]: "
+labels:
+  - prompt-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to the bestimage.ai edition. Submit one prompt per issue and label untested ideas honestly. Do not include API keys, private data, temporary signed links, unauthorized media, or copied prompt-library content.
+
+  - type: input
+    id: title
+    attributes:
+      label: Prompt title
+      description: Use a unique, searchable title that describes the practical scene.
+      placeholder: e.g. Reusable three-color product catalog rotation
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case and intended result
+      description: What should this prompt help a creator produce?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Wan 3.0 workflow
+      options:
+        - Text to Video (T2V)
+        - Image to Video (I2V)
+        - Start and end frames
+        - Reference to Video (R2V)
+        - Video Edit
+        - Audio or dialogue driven
+        - Other or mixed workflow
+    validations:
+      required: true
+
+  - type: input
+    id: settings
+    attributes:
+      label: Settings and verification status
+      description: State tested or untested, then include duration, aspect ratio, resolution, sound, seed, and platform when relevant.
+      placeholder: 12 seconds, 9:16, 720p, sound on, tested with ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Complete copy-ready prompt
+      description: Paste the exact prompt as text, including temporal actions, camera, sound, locks, and constraints.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Input references and assigned roles
+      description: List only shareable inputs and state one role for each, such as “Image 1 = product geometry; Video 1 = motion rhythm only.” Write “None” for T2V.
+    validations:
+      required: true
+
+  - type: input
+    id: output
+    attributes:
+      label: Generated result, if tested
+      description: Add a public result link or image/video URL you are allowed to share. You can also attach media after creating the issue.
+      placeholder: https://...
+
+  - type: textarea
+    id: observations
+    attributes:
+      label: What worked, failed, or changed
+      description: Note identity, motion, physics, camera, sound, dialogue, or edit behavior that helps reviewers reproduce the result.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Prompt or dialogue language
+      multiple: true
+      options:
+        - English
+        - Simplified Chinese
+        - Traditional Chinese
+        - Japanese
+        - Korean
+        - Spanish
+        - French
+        - German
+        - Brazilian Portuguese
+        - Italian
+        - Arabic
+        - Russian
+        - Indonesian
+        - Thai
+        - Vietnamese
+        - Another language
+    validations:
+      required: true
+
+  - type: input
+    id: attribution
+    attributes:
+      label: Preferred attribution (optional)
+      description: Add a name and profile URL, or write “No public attribution.”
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Contribution confirmations
+      options:
+        - label: I created this prompt or have permission to contribute it under this repository's license.
+          required: true
+        - label: I have permission to share every attached input and output, and they contain no private or secret data.
+          required: true
+        - label: This is not a copied prompt-library entry with only names or adjectives changed.
+          required: true
+        - label: The submission avoids unauthorized celebrity likenesses, protected characters, and imitation of a living artist's style.
+          required: true
+        - label: I understand maintainers may rewrite, test, categorize, or decline the submission.
+          required: true
